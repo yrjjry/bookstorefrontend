@@ -19,7 +19,7 @@ const EditBook = () => {
     axios
       // https://bookstore-d7jp.onrender.com
       // http://localhost:5555/books/
-      .get(`https://bookstore-d7jp.onrender.com/${id}`)
+      .get(`https://bookstore-d7jp.onrender.com/books/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setAuthor(response.data.author);
@@ -40,7 +40,7 @@ const EditBook = () => {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:5555/books/${id}`, data)
+      .put(`https://bookstore-d7jp.onrender.com/books/${id}`, data)
       .then(() => {
         setLoading(false);
         enqueueSnackbar("Book edited Successfully!", { variant: "success" });
